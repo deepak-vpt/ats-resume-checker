@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, X, Loader2 } from 'lucide-react';
-import { ATSAnalysisResult } from '../types';
+import type { ATSAnalysisResult } from '../types';
 import axios from 'axios';
 
 interface Props {

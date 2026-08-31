@@ -136,7 +136,7 @@ export default function App() {
 
   const fetchBackendHistory = async () => {
     try {
-      const res = await axios.get('/api/v1/analyze/history');
+      const res = await axios.get(`${import.meta.env.VITE_API_URL || ''}/api/v1/analyze/history`);
       if (Array.isArray(res.data) && res.data.length > 0) {
         setHistory(res.data);
       }
@@ -164,7 +164,7 @@ export default function App() {
       formData.append('resume', file);
       formData.append('job_description', jd);
 
-      const res = await axios.post('/api/v1/analyze/resume', formData, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || ''}/api/v1/analyze/resume`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
